@@ -1,0 +1,17 @@
+apiVersion: core.oam.dev/v1alpha1
+kind: ApplicationConfiguration
+metadata:
+  name: first-app
+spec:
+  components:
+    - componentName: spartan-app-v1
+      instanceName: first-app-spartan-app-v1
+      traits:
+        - name: ingress
+          parameterValues:
+            # - name: hostname
+            #   value: example.com
+            - name: path
+              value: /
+            - name: service_port
+              value: 8080

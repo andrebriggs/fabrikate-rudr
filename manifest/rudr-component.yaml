@@ -1,0 +1,15 @@
+apiVersion: core.oam.dev/v1alpha1
+kind: ComponentSchematic
+metadata:
+  name: spartan-app-v1
+spec:
+  # Workload Type `Server` is choose since is very typical web application, 
+  # it is stateless, always running as a service, can be replicated
+  workloadType: core.oam.dev/v1alpha1.Server
+  containers:
+    - name: foo
+      image: andrebriggs/spartan-app
+      ports:
+        - port: 8080
+          name: http
+          containerPort: 8080

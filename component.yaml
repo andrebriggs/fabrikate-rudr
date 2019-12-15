@@ -1,0 +1,35 @@
+name: "fabrikate-rudr"
+type: static
+path: "./tmp"
+hooks:
+  before-generate:
+  - |
+    mkdir crds
+    cp -r ./helm_repos/rudr/charts/rudr/crds/ ./tmp/rudr-crds/
+  after-generate:
+  - |
+    rm -r tmp
+# Having the 2 subcomponents causes Fab to download the same helm repo twice. How to fix?
+subcomponents:
+- name: rudr
+  type: "helm"
+  path: "charts/rudr"
+  method: "git"
+  source: "https://github.com/oam-dev/rudr"
+- name: healthscope
+  type: "helm"
+  path: "charts/healthscope"
+  method: "git"
+  source: "https://github.com/oam-dev/rudr"
+# We need an ingress trait. Here we have choosen to use NGINX
+- name: nginx-ingress
+  type: "helm"
+  path: "nginx-ingress"
+  method: "helm"
+  source: "https://kubernetes-charts.storage.googleapis.com/"
+# We need an autoscaler trait. Here we have choosen to use KEDA
+- name: keda-autoscaler
+  type: "helm"
+  path: "keda"
+  method: "helm"
+  source: "https://kedacore.github.io/charts"
