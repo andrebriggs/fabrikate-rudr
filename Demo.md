@@ -24,6 +24,18 @@ Rudr's model consists of:
 
 [//]: # (## Direction of Kubernetes related to Bedrock)
 
+## Why this is relevant to Bedrock work
+
+OAM and Rudr are interesting because they follow they natural evolutions of all industries,  working towards abstracts for what was once complicated. 
+
+Talking about Kubernetes specifically, many agree that it is still quite difficult to get up and going. In the real world organizations are usually built around the idea of someone doing the "work" and someone else "managing" or overseeing the expected work. Checks and balances. Expecting an industry of developers and IT professionals to yield to the whims of a Kubernetes architecture is naive.
+
+IMHO, Bedrock is about recognizing patterns that folks encounter when attempting to be productive with Kubernetes and _bundling_ the patterns that are reusable such as GitOps, IaC, deployment models such as canaries and blue/green. In addition observablity bundles such as an ELK stack.
+
+The next evolution of that should allow anyone with any infrastructure (local, cloud, low resource/latency) to be productive in the simplest case by just focusing on their business logic. How can we bundle Kubernetes as a shiny appliance with big easy to see buttons and knobs that fulfill the use cases of _most_ organizations? There will always be situtations where the hood of the car needs to be popped open to hot rod the vechicle. We are not interested in that.
+
+Taking building block and creating recognizable utilities. OAM is congruent with that mode of thinking. Other projects such as SMI and Dapr are also working in this direction.
+
 [//]: # (## Artifacts)
 
 ## Further Information
